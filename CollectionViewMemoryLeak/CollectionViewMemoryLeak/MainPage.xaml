@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CollectionViewMemoryLeak.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid RowSpacing="50">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            Text="{Binding Title}" />
+
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Command="{Binding GoToCollectionCommand}"
+            HorizontalOptions="Center"
+            Text="CollectionViewPageClick"
+            VerticalOptions="Center" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Command="{Binding GoToListCommand}"
+            HorizontalOptions="Center"
+            Text="ListViewPageClick"
+            VerticalOptions="Center" />
+
+        <HorizontalStackLayout
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            Spacing="80">
+
+            <VerticalStackLayout>
+                <Label FontSize="20" Text="CollectionViewCount" />
+                <Label FontSize="20" Text="{Binding CviCount}" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label FontSize="20" Text="ListViewCount" />
+                <Label FontSize="20" Text="{Binding LviCount}" />
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+    </Grid>
+
+</ContentPage>
