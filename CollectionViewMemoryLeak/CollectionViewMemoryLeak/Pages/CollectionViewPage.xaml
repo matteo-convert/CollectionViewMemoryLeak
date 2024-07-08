@@ -26,7 +26,30 @@
             Text="Back"
             VerticalOptions="Center" />
 
-        <CollectionView Grid.Row="2" />
+        <CollectionView Grid.Row="2" ItemsSource="{Binding List}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="{Binding cde}" />
+                        <Label Grid.Column="1" Text="{Binding client}" />
+                        <Label Grid.Column="2" Text="{Binding raison}" />
+                        <Label Grid.Column="3" Text="{Binding adr1}" />
+                        <Label Grid.Column="4" Text="{Binding adr2}" />
+                        <Label Grid.Column="5" Text="{Binding ttc}" />
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 
 
